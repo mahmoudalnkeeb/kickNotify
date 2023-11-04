@@ -55,7 +55,7 @@ I have exciting plans for the future of KickNotify. Here are some of the upcomin
 
 - [ ] **Role Mentioning**:adding the ability to mention a specific role in your Discord server, so you can notify a designated group of members.
 
-Stay tuned for these exciting updates as we continue to improve KickNotify.
+Stay tuned for these exciting updates as I will continue to improve KickNotify.
 
 ## Contribution
 
