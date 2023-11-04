@@ -1,0 +1,28 @@
+{
+  "name": "kick-notify",
+  "version": "1.0.0",
+  "description": "discord bot for kick livestreams notifications",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "keywords": [
+    "discord",
+    "bot",
+    "kick",
+    "notifications"
+  ],
+  "author": "7odadocoding",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^14.13.0",
+    "dotenv": "^16.3.1",
+    "node-fetch": "^3.3.2",
+    "puppeteer": "^21.5.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
