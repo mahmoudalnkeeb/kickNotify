@@ -70,23 +70,41 @@ export default class DiscordBot {
    async updateMessage(data) {
       try {
          const channel = await this.client.channels.fetch(this.channelId);
-         if (channel instanceof TextChannel) {
-            const embed = buildMessage(data, this.mentionEveryone);
-            if (this.liveStreamMessageId) {
-               await channel.messages.edit(this.liveStreamMessageId, {
+
+         if (!(channel instanceof TextChannel)) {
+            console.error('Channel is not a TextChannel.');
+            return;
+         }
+
+         const embed = buildMessage(data, this.mentionEveryone);
+
+         if (this.liveStreamMessageId) {
+            try {
+               const existingMessage = await channel.messages.fetch(
+                  this.liveStreamMessageId
+               );
+               await existingMessage.edit({
                   content: data.isOffline ? 'Stream Ended' : null,
                   embeds: [embed],
                });
-            } else {
-               const newMessage = await channel.send({
-                  embeds: [embed],
-               });
-               this.liveStreamMessageId = newMessage.id;
+            } catch (editError) {
+               if (editError.code === 10008) {
+                  await this.sendNewMessage(channel, embed);
+               } else {
+                  console.error('Error editing Discord message:', editError);
+               }
             }
+         } else {
+            await this.sendNewMessage(channel, embed);
          }
       } catch (error) {
          console.error('Error sending/updating Discord message:', error);
       }
+   }
+
+   async sendNewMessage(channel, embed) {
+      const newMessage = await channel.send({ embeds: [embed] });
+      this.liveStreamMessageId = newMessage.id;
    }
 
    start() {
