@@ -21,6 +21,7 @@ To get started with KickNotify, ensure you have the following prerequisites:
   CHANNEL_ID="YOUR_DISCORD_CHANNEL_ID"
   UPDATE_INTERVAL=60000
   MENTION_EVERYONE=1
+  MENTION_ROLE="ROLE_ID_FOR_STREAMS_NOTIFICATIONS"
   ```
 
 ## Installation
@@ -53,7 +54,7 @@ I have exciting plans for the future of KickNotify. Here are some of the upcomin
 
 - [ ] **Online Time Feature**: Keep track of streamers' online time, providing even more information about their broadcasts.
 
-- [ ] **Role Mentioning**:adding the ability to mention a specific role in your Discord server, so you can notify a designated group of members.
+- [X] **Role Mentioning**:adding the ability to mention a specific role in your Discord server, so you can notify a designated group of members.
 
 Stay tuned for these exciting updates as I will continue to improve KickNotify.
 
