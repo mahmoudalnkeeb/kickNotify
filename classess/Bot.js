@@ -19,7 +19,6 @@ export default class DiscordBot {
       this.updateInterval = +process.env.UPDATE_INTERVAL;
       this.liveStreamMessageId = null;
       this.data = null;
-
       this.client.once('ready', () => this.onReady());
    }
 

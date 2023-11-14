@@ -10,8 +10,6 @@ To get started with KickNotify, ensure you have the following prerequisites:
 
 - **npm**: Node Package Manager, with a recommended version of 9.8.1 or higher.
 
-- **Headless Browser**: Ensure your platform supports headless browsers. This is necessary for KickNotify to access streaming platforms.
-
 - **Environment Variables**: Create an `.env` file with the following environment variables:
 
   ```dotenv
