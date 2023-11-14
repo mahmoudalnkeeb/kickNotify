@@ -1,7 +1,7 @@
 import { config } from 'dotenv';
 import { Client, GatewayIntentBits, TextChannel } from 'discord.js';
 import { buildMessage, getUri } from '../utils/utils.js';
-import Livestream from './livestream.js';
+import Livestream from './Livestream.js';
 
 config();
 
